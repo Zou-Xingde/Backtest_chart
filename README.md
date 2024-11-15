@@ -1,4 +1,4 @@
-點擊匯入>>匯入Excel>>出現年度盈利圖
+點擊匯入>>匯入Excel>>出現年度盈利圖  
   圖中>>顯示柱狀圖+折線圖
 ![image](https://github.com/Zou-Xingde/Backtest_chart/blob/master/image/year.png)
 點擊每一年的柱子>>出現點擊年分的每個月盈利圖
