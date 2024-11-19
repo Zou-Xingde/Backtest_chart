@@ -2,10 +2,32 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 25,
    "id": "d917dd95-2d26-4bc9-96d9-98fdbd2b2616",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "        <iframe\n",
+       "            width=\"100%\"\n",
+       "            height=\"650\"\n",
+       "            src=\"http://127.0.0.1:8054/\"\n",
+       "            frameborder=\"0\"\n",
+       "            allowfullscreen\n",
+       "            \n",
+       "        ></iframe>\n",
+       "        "
+      ],
+      "text/plain": [
+       "<IPython.lib.display.IFrame at 0x2b6b5fa4440>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
    "source": [
     "from dash import Dash, dcc, html, Input, Output, State\n",
     "from waitress import serve\n",
@@ -174,18 +196,23 @@
     "\n",
     "    return create_annual_chart(), None, None, None, dash.no_update, 'annual'\n",
     "\n",
+    "port = int(os.environ.get('PORT', 8054))\n",
     "\n",
-    "        # 端口配置\n",
-    "    port = int(os.environ.get('PORT', 8055))\n",
-    "    \n",
-    "    if __name__ == '__main__':\n",
-    "        app.run_server(\n",
-    "            host='0.0.0.0',  # 重要：允许外部访问\n",
-    "            port=port,\n",
-    "            debug=False      # 生产环境设为False\n",
-    "        )\n",
-    "\n"
+    "if __name__ == '__main__':\n",
+    "    app.run_server(\n",
+    "        host='0.0.0.0',  # 重要：允许外部访问\n",
+    "        port=port,\n",
+    "        debug=False      # 生产环境设为False\n",
+    "    )"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d16e0727-f28b-4595-bd1a-6e6739d18d96",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
