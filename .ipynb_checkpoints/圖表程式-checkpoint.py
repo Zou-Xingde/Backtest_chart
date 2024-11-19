@@ -180,7 +180,29 @@
   },
   {
    "cell_type": "code",
-   "execution_count": None,
+   "execution_count": 4,
+   "id": "1c6b126a-444d-4c53-be88-1e5309428ebf",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'python3' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[4], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m python3 \u001b[38;5;241m-\u001b[39m\u001b[38;5;241m-\u001b[39mversion\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'python3' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "python3 --version"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
    "id": "63f4a776-7e92-4060-8910-3705612555cd",
    "metadata": {},
    "outputs": [],
