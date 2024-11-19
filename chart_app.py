@@ -41,11 +41,9 @@
     "\n",
     "# 初始空的 DataFrame\n",
     "df = pd.DataFrame()\n",
-    "\n",
     "# 建立 Dash 應用程式\n",
     "app = Dash(__name__)\n",
-    "\n",
-    "server = app.server\n",
+    "server = app.server  # 确保有这行\n",
     "# 初始圖表為年度總盈利圖\n",
     "def create_annual_chart():\n",
     "    if df.empty:\n",
@@ -197,14 +195,10 @@
     "\n",
     "    return create_annual_chart(), None, None, None, dash.no_update, 'annual'\n",
     "\n",
-    "@server.route('/')\n",
-    "def home():\n",
-    "    return 'Welcome to Dash App'\n",
-    "\n",
-    "# 运行配置\n",
+    "# 修改运行配置\n",
     "if __name__ == '__main__':\n",
-    "    port = int(os.environ.get('PORT', 8054))\n",
-    "    app.run_server(host='127.0.0.1', port=port, debug=False)"
+    "    port = int(os.environ.get('PORT', 8050))\n",
+    "    app.run_server(host='0.0.0.0', port=port, debug=False)"
    ]
   }
  ],
