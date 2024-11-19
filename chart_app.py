@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 3,
    "id": "d917dd95-2d26-4bc9-96d9-98fdbd2b2616",
    "metadata": {},
    "outputs": [],
@@ -13,6 +13,7 @@
     "import pandas as pd\n",
     "import plotly.graph_objects as go\n",
     "import io\n",
+    "import os\n",
     "import base64\n",
     "from dash.exceptions import PreventUpdate\n",
     "\n",
@@ -21,7 +22,7 @@
     "\n",
     "# 建立 Dash 應用程式\n",
     "app = Dash(__name__)\n",
-    "\n",
+    "server = app.server\n",
     "# 初始圖表為年度總盈利圖\n",
     "def create_annual_chart():\n",
     "    if df.empty:\n",
@@ -173,10 +174,10 @@
     "\n",
     "    return create_annual_chart(), None, None, None, dash.no_update, 'annual'\n",
     "\n",
-    "    server = app.server\n",
     "\n",
     "    if __name__ == \"__main__\":\n",
-    "        app.run_server(debug=True)\n",
+    "        port = int(os.environ.get(\"PORT\", 8055))\n",
+    "        app.run_server(debug=True, host=\"0.0.0.0\", port=port)\n",
     "\n"
    ]
   }
