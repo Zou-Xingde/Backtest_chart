@@ -176,7 +176,6 @@
     "    server = app.server\n",
     "\n",
     "    if __name__ == \"__main__\":\n",
-    "        port = int(os.environ.get(\"PORT\", 8050))  # 正确的格式\n",
     "        app.run_server(debug=True)\n",
     "\n"
    ]
