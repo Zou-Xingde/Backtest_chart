@@ -174,9 +174,10 @@
     "\n",
     "    server = app.server\n",
     "\n",
-    "    if __name__ == '__main__':\n",
-    "    port = int(os.environ.get("PORT", 8050))\n",
-    "    app.run_server(host="0.0.0.0", port=port, debug=True)\n",
+    "    if __name__ == \"__main__\":\n",
+    "    port = int(os.environ.get(\"PORT\", 8050))  # 正确的格式\n",
+    "    app.run_server(host=\"0.0.0.0\", port=port, debug=True)\n",
+    "\n"
    ]
   },
   {
