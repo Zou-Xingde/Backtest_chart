@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 6,
    "id": "d917dd95-2d26-4bc9-96d9-98fdbd2b2616",
    "metadata": {},
    "outputs": [],
@@ -175,9 +175,15 @@
     "    return create_annual_chart(), None, None, None, dash.no_update, 'annual'\n",
     "\n",
     "\n",
-    "    if __name__ == \"__main__\":\n",
-    "        port = int(os.environ.get(\"PORT\", 8055))\n",
-    "        app.run_server(debug=True, host=\"0.0.0.0\", port=port)\n",
+    "        # 端口配置\n",
+    "    port = int(os.environ.get('PORT', 8055))\n",
+    "    \n",
+    "    if __name__ == '__main__':\n",
+    "        app.run_server(\n",
+    "            host='0.0.0.0',  # 重要：允许外部访问\n",
+    "            port=port,\n",
+    "            debug=False      # 生产环境设为False\n",
+    "        )\n",
     "\n"
    ]
   }
