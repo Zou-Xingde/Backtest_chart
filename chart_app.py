@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 27,
    "id": "d917dd95-2d26-4bc9-96d9-98fdbd2b2616",
    "metadata": {},
    "outputs": [
@@ -21,7 +21,7 @@
        "        "
       ],
       "text/plain": [
-       "<IPython.lib.display.IFrame at 0x2b6b5fa4440>"
+       "<IPython.lib.display.IFrame at 0x2b6b4935250>"
       ]
      },
      "metadata": {},
@@ -44,6 +44,7 @@
     "\n",
     "# 建立 Dash 應用程式\n",
     "app = Dash(__name__)\n",
+    "\n",
     "server = app.server\n",
     "# 初始圖表為年度總盈利圖\n",
     "def create_annual_chart():\n",
@@ -196,14 +197,14 @@
     "\n",
     "    return create_annual_chart(), None, None, None, dash.no_update, 'annual'\n",
     "\n",
-    "port = int(os.environ.get('PORT', 8054))\n",
+    "@server.route('/')\n",
+    "def home():\n",
+    "    return 'Welcome to Dash App'\n",
     "\n",
+    "# 运行配置\n",
     "if __name__ == '__main__':\n",
-    "    app.run_server(\n",
-    "        host='0.0.0.0',  # 重要：允许外部访问\n",
-    "        port=port,\n",
-    "        debug=False      # 生产环境设为False\n",
-    "    )"
+    "    port = int(os.environ.get('PORT', 8054))\n",
+    "    app.run_server(host='127.0.0.1', port=port, debug=False)"
    ]
   }
  ],
