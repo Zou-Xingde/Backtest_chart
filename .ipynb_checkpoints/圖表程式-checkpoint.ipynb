@@ -2,12 +2,13 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 71,
+   "execution_count": 5,
    "id": "d917dd95-2d26-4bc9-96d9-98fdbd2b2616",
    "metadata": {},
    "outputs": [],
    "source": [
     "from dash import Dash, dcc, html, Input, Output, State\n",
+    "from waitress import serve\n",
     "import dash\n",
     "import pandas as pd\n",
     "import plotly.graph_objects as go\n",
@@ -175,8 +176,9 @@
     "    server = app.server\n",
     "\n",
     "    if __name__ == \"__main__\":\n",
-    "    port = int(os.environ.get(\"PORT\", 8050))  # 正确的格式\n",
-    "    app.run_server(host=\"0.0.0.0\", port=port, debug=True)\n",
+    "        port = int(os.environ.get(\"PORT\", 8050))  # 正确的格式\n",
+    "        print(f\"Starting server on port {port}...\")\n",
+    "        serve(server, host=\"0.0.0.0\", port=port)  # 使用 waitress 启动服务\n",
     "\n"
    ]
   },
