@@ -173,8 +173,7 @@ def update_chart(contents, clickData, n_clicks, selected_year, selected_month, s
 # 修改运行配置
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8054))
-    app.run_server(host='0.0.0.0', port=port, debug=False)
-
+    app.run(host='0.0.0.0', port=port)
 
 
 
