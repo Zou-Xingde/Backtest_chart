@@ -176,13 +176,6 @@ if __name__ == '__main__':
     app.run_server(host='0.0.0.0', port=port, debug=False)
 
 
-# In[35]:
-
-
-get_ipython().system('jupyter nbconvert --to script first_code.ipynb')
-
-
-# In[ ]:
 
 
 
