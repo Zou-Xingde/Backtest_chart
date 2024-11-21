@@ -53,7 +53,7 @@ def update_output(contents, filename):
             import io
             import base64
             decoded = base64.b64decode(content_string)
-            df = pd.read_excel('EX.xlsx')
+            df = pd.read_excel(decoded)
             # 返回表格視圖
             return dash_table.DataTable(
                 data=df.to_dict("records"),
