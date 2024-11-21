@@ -164,7 +164,7 @@ def update_chart(clickData, n_clicks, selected_year, selected_month, selected_we
 
 
 # In[8]:
-
+server = app.server  # 确保有这行
 
 # 定義回調函數
 # 當圖表中的不同層次的柱狀圖被點擊時，圖表會根據需求進行更新
